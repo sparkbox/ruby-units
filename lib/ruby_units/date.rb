@@ -8,7 +8,7 @@ class Date
   # @return [Unit]
   def +(unit)
     case unit
-    when Unit
+    when RubyUnits::Unit
       unit = unit.convert_to('d').round if ['y', 'decade', 'century'].include? unit.units 
       unit_date_add(unit.convert_to('day').scalar)
     else
